@@ -1,0 +1,24 @@
+{
+  "name": "golang-cover-parse",
+  "version": "1.0.0",
+  "description": "Parse Go coverage to JavaSript object, based on output from lcov-parse",
+  "main": "source/index.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "testcover": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vokal/golang-cover-parse.git"
+  },
+  "author": "Vokal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vokal/golang-cover-parse/issues"
+  },
+  "homepage": "https://github.com/vokal/golang-cover-parse",
+  "dependencies": {
+    "mocha": "^2.2.5",
+    "xml2js": "^0.4.9"
+  }
+}
