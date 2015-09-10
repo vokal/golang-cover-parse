@@ -4,6 +4,10 @@ Parse Go cover results file to JavaScript Object
 
 The output is based on, and intended to be compatible with, https://github.com/davglass/lcov-parse
 
+Also see:
+- [cobertura-parse](https://www.npmjs.com/package/cobertura-parse)
+- [jacoco-parse](https://www.npmjs.com/package/jacoco-parse)
+
 ## Use
 
 ```js
