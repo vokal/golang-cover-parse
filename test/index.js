@@ -12,10 +12,8 @@ describe( "parseFile", function ()
         {
             assert.equal( err, null );
             assert.equal( result.length, 2 );
-            assert.equal( result[ 0 ].functions.found, 0 );
-            assert.equal( result[ 0 ].functions.hit, 0 );
-            assert.equal( result[ 0 ].lines.found, 58 );
-            assert.equal( result[ 0 ].lines.hit, 32 );
+            assert.equal( result[ 0 ].lines.found, 210 );
+            assert.equal( result[ 0 ].lines.hit, 111 );
             assert.equal( result[ 0 ].lines.details[ 0 ].line, 44 );
             assert.equal( result[ 0 ].lines.details[ 0 ].hit, 0 );
             done();

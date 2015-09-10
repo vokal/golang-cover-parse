@@ -45,25 +45,36 @@ parse.parseContent = function ( text, cb )
                     found: 0,
                     hit: 0,
                     details: []
-                },
-                functions: {
-                    found: 0,
-                    hit: 0,
-                    details: []
                 }
             } );
         }
 
         var file = files[ files.length - 1 ];
 
-        var lineNumber = Number( values.split( "," )[ 0 ].split( "." )[ 0 ] );
+        var startLine = Number( values.split( "," )[ 0 ].split( "." )[ 0 ] );
+        var endLine = Number( values.split( "," )[ 1 ].split( "." )[ 0 ] );
         var hit = Number( values.split( " " )[ 2 ] );
 
-        file.lines.found++;
-        file.lines.details.push( {
-            line: lineNumber,
-            hit: hit
-        } );
+        file.lines.found += endLine - startLine + 1;
+        for( var lineNumber = startLine; lineNumber <= endLine; lineNumber++ )
+        {
+            var existingLine = file.lines.details.filter( function ( ex )
+            {
+                return ex.line === lineNumber;
+            } )[ 0 ];
+
+            if( existingLine )
+            {
+                existingLine.hit += hit;
+            }
+            else
+            {
+                file.lines.details.push( {
+                    line: lineNumber,
+                    hit: hit
+                } );
+            }
+        }
     } );
 
     files.forEach( function ( file )
