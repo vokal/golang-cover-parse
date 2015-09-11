@@ -1,6 +1,6 @@
 {
   "name": "golang-cover-parse",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parse Go coverage to JavaSript object, based on output from lcov-parse",
   "main": "source/index.js",
   "scripts": {
@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/vokal/golang-cover-parse",
   "dependencies": {
-    "mocha": "^2.2.5",
-    "xml2js": "^0.4.9"
+    "mocha": "^2.2.5"
   }
 }
